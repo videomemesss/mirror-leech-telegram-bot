@@ -82,7 +82,6 @@ def restart(update, context):
     if Interval:
         Interval[0].cancel()
         Interval.clear()
-    alive.kill()
     clean_all()
     srun(["pkill", "-9", "-f", "gunicorn|extra-api|last-api|megasdkrest|new-api"])
     srun(["python3", "update.py"])
